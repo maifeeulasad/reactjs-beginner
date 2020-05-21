@@ -1,0 +1,254 @@
+<div id='wrapper'>
+<h1>Day 1 - 2020.05.19</h1>
+<h2>Basic JS - Part 1</h2>
+<p>
+   Let's assume we all have no problem with the introduction. So let's carry on. To get started with React.js, first we need some basic knowledge about JS. As we all have Node installed in our Windows machine. We can just run any JS code without facing any difficulties, just open your CMD and type node. That's all, now you should see a > (arrow pointing right, so you are ready for upcomings)
+</p>
+<p>
+   Todays sections : 
+<ul>
+   <li>Print something</li>
+   <li>Variable and Primitive types</li>
+</ul>
+</p>
+<p>
+   These are the basic JS, we must need to know for React.js, so hold tight.
+</p>
+<h2>Print</h2>
+<p>
+   To print something, we will use the methods below :
+</p>
+<pre class='code code-javascript'><label>JS</label><code>> console.log("hello world")
+hello world
+undefined
+> console.debug("hello world")
+hello world
+undefined
+> console.error("hello world")
+hello world
+undefined
+> console.info("hello world")
+hello world
+undefined
+></code></pre>
+<p>
+   All prints exactly the same. Right ? And there are many more methods for logging or printing(actually to assist these or customize these functions output), but these are the 4 methods for printing. We will eventually find out when and where to use which one. For now we will be using console.log(...) only. Actually the don't print exactly the same, when we will be doing this on a browser or on a colorized environment, we will find out the difference. 
+</p>
+<p>
+   And another question is wht there is a undefined at the end of every output ? - Just ignore it. And <strong>DON'T</strong> try to even search on Stackoverflow or Quora, and try to disble this. If you do so, you will face serious issues in debugging your code in the future. For now just bear in mind that it just prints whatever those funtions returns you have entered. <!--And for today I wor't be pasting my code with undefined on it, unless it is necessary.-->
+</p>
+<h2>Variable and Primitive types</h2>
+<p>
+   First stop variables
+</p>
+<pre class='code code-javascript'><label>JS</label><code>> var a//we have just declared a variable named a
+undefined
+> console.log(a)                  //let's see what this a contains
+undefined                         //it contains undefined, unlike C, it doesn't contain grabage value, as we haven't initialized the variable a
+undefined
+> a=19                            //let's assign value to a
+19
+> console.log(a)                  //and try to see it's value again
+19                                //ok, it holds 19 as we have assigned 19 to it
+undefined
+> a="maifee"                      //let's try assigning something again and of different type, as 19 was number and "maifee" is string
+'maifee'
+> console.log(a)                  //and print again
+maifee                            //it prints 'maifee', why ? - cause JS is loosely typed language, means we can change any variables type, means - it doesn't restrict variable of changing types
+undefined
+> console.log(b)                  //let's try printing something, we haven't defined yet
+Thrown:
+ReferenceError: b is not defined  //we get error, as we should, as it is not declared
+> var b                           //we have declared another variable called b
+undefined
+> console.log(b)                  //lets try once again
+undefined                         //it's fine
+undefined
+></code></pre>
+<p>
+   We have 9 types in JS. Why don't we just directly try them :
+</p>
+<pre class='code code-javascript'><label>JS</label><code>> console.log(typeof 19)
+number                      //19 is a number
+undefined
+> console.log(typeof 'maifee')
+string                      //"maifee" or 'maifee' is a string
+undefined
+> console.log(typeof false)
+boolean                     //true and false are of type - boolean
+undefined
+> console.log(typeof {})
+object                      //{} looks like an object(more precicely JSON object), and it is an object
+undefined
+> console.log(typeof [])
+object                      //arrays are treated as object
+undefined
+> var c=null
+undefined
+> console.log(typeof c)     
+object                      //variable c has been created and assigned with some value, but this value doesn't represent any specific type for now, so it is also treated as object
+undefined
+> var d
+undefined
+> console.log(typeof d)     //variable d create but not assigned, so no need to even think about type of d, so d is undefined
+undefined
+undefined
+> console.log(typeof function test(){})
+function                    //you know it, when you see it
+undefined
+> console.log(typeof null)
+object                      //funny right ? 
+undefined
+> console.log(typeof undefined)
+undefined                   //now i'm serious. Actually - is JS, when variable are created and not assigned it is assigned with 'undefined', but if you initialize it with null or later assign it to null, the reason is explained just check last few comments(may last 4th from here?!?)
+undefined
+></code></pre>
+<p>
+   We have seen 'number','string','boolean','object','function' types for now, and already seen 'undefined'. Other types are - 'symbol', 'bigint'. And maybe in future we won't be seeing them. LOL. And 'null'? - Can you really have something with typeof null ? Cause 'undefined' and 'object' are better player here. 
+</p>
+<p>
+   Let's try to know about let, by example : 
+</p>
+<pre class='code code-javascript'><label>JS</label><code>> {var x=435;console.log(x)}
+435
+undefined
+> {var x=435;{console.log(x)}console.log(x)}          //line 1
+435
+435
+undefined
+> {var x=435;{console.log(x+"inside")}console.log(x+"outside")}         //line 2
+435inside
+435outside
+undefined
+> {var x=435;{var y=45654;console.log(x+"inside");}console.log(x+"outside")}          //line 3
+435inside
+435outside
+undefined
+> {var x=435;{var y=45654;console.log(x+"inside x");console.log(y +"inside y")}console.log(x+"outside x")}          //line 4
+435inside x
+45654inside y
+435outside x
+undefined
+> {var x=435;{var y=45654;console.log(x+"inside x");console.log(y +"inside y")}console.log(x+"outside x");console.log(y+"outside y")}         //line 5
+435inside x
+45654inside y
+435outside x
+45654outside y
+undefined
+> {var x=435;{var y=45654;let z=1;console.log(x+"inside x");console.log(y +"inside y")}console.log(x+"outside x");console.log(y+"outside y")}         //line 6
+435inside x
+45654inside y
+435outside x
+45654outside y
+undefined
+> {var x=435;{var y=45654;let z=1;console.log(x+"inside x");console.log(y +"inside y");console.log(z+"inside z");}console.log(x+"outside x");console.log(y+"outside y");console.log(z+"outsize z")}         //line 7
+435inside x
+45654inside y
+1inside z
+435outside x
+45654outside y
+Thrown:
+ReferenceError: z is not defined
+></code></pre>
+<p>
+   What actually happened here ? - 
+<ul>
+   <li>Line 1 > there was just two block, and variable was declared x with some value, from the inner block we tried to access that variable x and we have accessed it</li>
+   <li>Line 2 > Same as line 1, just made it a little clear</li>
+   <li>Line 3 > Declared an inner variable y</li>
+   <li>Line 4 > We just accessed an inner variable y, and it output the corret</li>
+   <li>Line 5 > We now accessed that same inner varible outside of that block, and we have successfully accessed that variable and that variable's value</li>
+   <li>Line 6 > Now insted of using var, we will use the keyword - 'let', and accessed that z, and everything is fine</li>
+   <li>Line 7 > We attempt to access that inner z from outside of z, but we get error 'z is not defiend', that's it. Cause as a block ends there is no more references of those variables.</li>
+</ul>
+</p>
+<p>
+   Now, lets try to know about const
+</p>
+<pre class='code code-javascript'><label>JS</label><code>> const ff=5
+undefined
+> console.log(ff)
+5
+undefined
+> ff=55
+Thrown:
+TypeError: Assignment to constant variable.
+> const test_var;
+Thrown:
+const test_var;
+      ^^^
+
+SyntaxError: Missing initializer in const declaration
+></code></pre>
+Do we really need an explaination here ? - We can't just reassign constant variables. And const variables, must be initialized.
+<h2>Conclusion</h2>
+If anyone has any issue or clarification, feel free to mail at : <i>maifeeulasad@gmail.com </i> with subject <i>"React Tutorial - day - 1"</i>, or create a bug report in my git repository : <a href="https://github.com/maifeeulasad/reactjs-beginner/issues/new">here</a>. Give title like - <i>"Day - 1 - little description"</i>
+<p>Next : 2020.05.23 or 2020.05.24, try to keep up like this till I intigrate with a way more managable calander or something</p>
+<style>
+   body {
+   background:#eee;
+   padding:0;
+   margin:0;
+   }
+   #wrapper {
+   padding:5%;
+   margin:0 auto;
+   }
+   h1{
+   text-align: center;
+   }
+   h2{
+   text-align: center;
+   }
+   /* CSS Simple Pre Code */
+   pre {
+   background: #333;
+   white-space: pre;
+   word-wrap: break-word;
+   overflow: auto;
+   }
+   pre.code {
+   margin: 20px 25px;
+   border-radius: 4px;
+   border: 1px solid #292929;
+   position: relative;
+   }
+   pre.code label {
+   font-family: sans-serif;
+   font-weight: bold;
+   font-size: 13px;
+   color: #ddd;
+   position: absolute;
+   left: 1px;
+   top: 15px;
+   text-align: center;
+   width: 60px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   pointer-events: none;
+   }
+   pre.code code {
+   font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+   display: block;
+   margin: 0 0 0 60px;
+   padding: 15px 16px 14px;
+   border-left: 1px solid #555;
+   overflow-x: auto;
+   font-size: 13px;
+   line-height: 19px;
+   color: #ddd;
+   }
+   pre.code-css code {
+   color: #91a7ff;
+   }
+   pre.code-html code {
+   color: #aed581;
+   }
+   pre.code-javascript code {
+   color: #ffa726;
+   }
+   pre.code-cmd code {
+   color: #4dd0e1;
+   }
+</style>
