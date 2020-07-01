@@ -9,7 +9,12 @@ class App extends React.Component{
     render() {
         return(
             <div>
-                My name is : {this.state.name}
+                <div>
+                    My name is : {this.state.name}
+                </div>
+                <div>
+                    And everybody calls me : {this.props.name}
+                </div>
             </div>
         )
     }

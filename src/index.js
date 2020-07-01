@@ -5,8 +5,8 @@ import BoroApp from './component/BoroApp'
 
 ReactDOM.render(
   <React.StrictMode>
-      <App/>
-    <BoroApp />
+      <App name={"janina"}/>
+      <BoroApp />
   </React.StrictMode>,
   document.getElementById('root')
 );
