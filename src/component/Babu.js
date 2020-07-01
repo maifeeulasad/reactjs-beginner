@@ -5,6 +5,7 @@ class Babu extends React.Component{
         return(
             <div>
                 Ami babu
+                My address {this.props.address}
             </div>
         )
     }

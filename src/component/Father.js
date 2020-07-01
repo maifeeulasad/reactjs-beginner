@@ -5,6 +5,7 @@ class Father extends React.Component{
         return(
             <div>
                 I'm the father
+                My address {this.props.address}
             </div>
         )
     }
