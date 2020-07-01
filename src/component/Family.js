@@ -19,7 +19,7 @@ class Family extends React.Component{
             <div>
                 Family income : {this.state.earn}
                 <Father address={this.state.address} earningChange={this.earningChange}/>
-                <Mother address={this.state.address}/>
+                <Mother address={this.state.address} earn={this.state.earn}/>
                 <Babu address={this.state.address}/>
             </div>
         )

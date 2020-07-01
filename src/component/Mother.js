@@ -6,6 +6,7 @@ class Mother extends React.Component{
             <div>
                 I'm the mother
                 My address {this.props.address}
+                My husband earns {this.props.earn}
             </div>
         )
     }
