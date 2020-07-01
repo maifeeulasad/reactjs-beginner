@@ -6,13 +6,19 @@ import Babu from "./Babu";
 class Family extends React.Component{
 
     state={
-      address:"Home"
+        address:"Home",
+        earn:0,
+    };
+
+    earningChange = (earn) =>{
+        this.setState({earn:earn});
     };
 
     render() {
         return(
             <div>
-                <Father address={this.state.address}/>
+                Family income : {this.state.earn}
+                <Father address={this.state.address} earningChange={this.earningChange}/>
                 <Mother address={this.state.address}/>
                 <Babu address={this.state.address}/>
             </div>
