@@ -10,7 +10,8 @@ class App extends React.Component{
     render() {
         return(
             <div>
-                
+                My name is : {this.state.name}
+                My age is : {this.state.age}
             </div>
         )
     }
