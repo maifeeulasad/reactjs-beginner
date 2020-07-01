@@ -4,7 +4,7 @@ class Mother extends React.Component{
     render() {
         return(
             <div>
-
+                I'm the mother
             </div>
         )
     }
