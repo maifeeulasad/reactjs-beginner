@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './component/App'
-import BoroApp from './component/BoroApp'
+import Family from "./component/Family";
 
 ReactDOM.render(
   <React.StrictMode>
-      <App />
-      <BoroApp />
+      <Family/>
   </React.StrictMode>,
   document.getElementById('root')
 );
